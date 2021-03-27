@@ -1,0 +1,66 @@
+# Examen2
+Lidia Wilmary Poueriet Soliman 2020-10451
+
+agenda=[]
+agenda1=[]
+class administrar:
+
+  def contactos():
+
+    nombre=input("Escriba su nombre: ")
+    agenda.append(f"Nombre: {nombre}")
+    telefono=int(input("Escriba su numero telefonico: "))
+    agenda.append(f"Telefono: {telefono}")
+    mail=input("Escriba su mail: ")
+    agenda.append(f"mail: {mail}")
+    direccion=input("Escriba su direccion: ")
+    agenda.append(f"Direccion: {direccion} \n")
+    
+    c1=int(input("Opciones\n1-Crear contacto.\n2-Lista telefono.\n3-Buscar contacto.\n4-Modificar su telefono,mail o dirrecion.\n5-Salir.\n"))
+    
+    if c1==1:
+      nombre1=input("Escriba su nombre: ")
+      agenda1.append(f"Nombre: {nombre1}")
+      telefono1=int(input("Digite su numero telefonico: "))
+      agenda1.append(f"Telefono: {telefono1}")
+      mail1=input("Escriba su mail: ")
+      agenda1.append(f"mail: {mail1}")
+      direccion1=input("Escriba su direccion: ")
+      agenda1.append(f"Dirrecion: {direccion1} \n")
+      print("Cambio realizado.")
+
+    elif c1==2:
+      print(f"La lista de su telefono es:{agenda}")
+
+    elif c1==3:
+      buscar=input("Escriba el nombre del contacto: ")
+      if buscar==nombre:
+        print(agenda)
+      elif buscar!=nombre:
+        print("Ese nombre no existe")
+
+    elif c1==4:
+      telefono2=int(input("Digite su numero telefonico: "))
+      agenda.append(f"Telefono: {telefono2}")
+      del agenda[1]
+      mail2=input("Escriba su mail:  ")
+      agenda.append(f"mail: {mail2}")
+      del agenda[2]
+      direccion2=input("Escriba su direccion: ")
+      agenda.append(f"Dirrecion: {direccion2} \n")
+      del agenda[3]
+      print("Cambio realizado.")
+
+    elif c1==5:
+      print("Salio.")
+
+    else:
+      print("Opcion equivocada.")
+
+  def listado():
+    print(f"Informaciones de personas:\n{agenda}\n{agenda1}")
+
+
+administrar()
+administrar.contactos()
+administrar.listado()
